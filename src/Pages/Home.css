@@ -12,3 +12,9 @@ body {
 button {
   font-family: "Poppins", sans-serif;
 }
+
+.Home {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
