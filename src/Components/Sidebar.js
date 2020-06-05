@@ -15,17 +15,14 @@ function Sidebar() {
       <img id="forest-logo" src={consoleLogo} alt="Forest Logo" />
 
       <div className="sidebar-option-container">
-        <img id="option-logo" src={homeLogo} alt="Home" />
-        <img id="option-logo" src={dataLogo} alt="Data" />
-        <img id="option-logo" src={gpsLogo} alt="GPS" />
-        <img id="option-logo" src={alertLogo} alt="Alert" />
-        <img id="option-logo" src={settingLogo} alt="setting" />
+        <img className="option-icon" src={homeLogo} alt="Home" />
+        <img className="option-icon" src={dataLogo} alt="Data" />
+        <img className="option-icon" src={gpsLogo} alt="GPS" />
+        <img className="option-icon" src={alertLogo} alt="Alert" />
+        <img className="option-icon" src={settingLogo} alt="setting" />
       </div>
 
-      <div className="user-account">
-        <img src={userPic} alt="User" />
-        <h1>Vikas</h1>
-      </div>
+      <img src={userPic} alt="User" />
     </div>
   );
 }

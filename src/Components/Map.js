@@ -4,8 +4,9 @@ import "./Map.css";
 import Chainsaw from "../img/chainsaw.png";
 
 const Map = () => {
+  const myWidth = window.innerWidth - 60;
   const [viewport, setViewport] = useState({
-    width: window.innerWidth,
+    width: myWidth,
     height: window.innerHeight,
     latitude: 19.182755,
     longitude: 72.840157,
