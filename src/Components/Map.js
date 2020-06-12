@@ -5,6 +5,7 @@ import Chainsaw from "../img/chainsaw.png";
 
 const Map = () => {
   const myWidth = window.innerWidth - 60;
+  const mapType = "mapbox://styles/mapbox/outdoors-v11";
   const [viewport, setViewport] = useState({
     width: myWidth,
     height: window.innerHeight,
@@ -17,7 +18,7 @@ const Map = () => {
     <div className="map-container">
       <ReactMapGL
         mapboxApiAccessToken={process.env.REACT_APP_MapboxAccessToken}
-        mapStyle="mapbox://styles/mapbox/light-v9"
+        mapStyle={mapType}
         {...viewport}
         onViewportChange={(viewport) => setViewport(viewport)}
       >

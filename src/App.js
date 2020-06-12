@@ -1,19 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
+import Login from "./Pages/Login";
 
-{
-  /*  Main entry point of the app used for routing between pages */
-}
+/*  Main entry point of the app used for routing between pages */
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Route path="/" component={Home} />
-      </div>
-    </Router>
+    <div className="App">
+      <Router>
+        <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route path="/home" component={Home} />
+        <Route path="/login" component={Login} />
+      </Router>
+    </div>
   );
 }
 
