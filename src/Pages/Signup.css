@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-img {
+#SignupPageImage {
   width: 40%;
   margin-top: 8vh;
 }
@@ -63,7 +63,7 @@ p {
   text-align: right;
   color: #606b78;
   margin-bottom: 7vh;
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
 
 a {

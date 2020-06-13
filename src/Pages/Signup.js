@@ -6,7 +6,7 @@ import SignupPageImage from "../img/forest-team.svg";
 const Signup = () => {
   return (
     <div className="signup-page">
-      <img src={SignupPageImage} alt="" />
+      <img id="SignupPageImage" src={SignupPageImage} alt="" />
       <div className="right-elements">
         <h1 className="header-1">Connect, Collect</h1>
         <h1 className="header-2">Adapt</h1>

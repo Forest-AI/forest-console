@@ -5,13 +5,13 @@ import Chainsaw from "../img/chainsaw.png";
 
 const Map = () => {
   const myWidth = window.innerWidth - 60;
-  const mapType = "mapbox://styles/mapbox/outdoors-v11";
+  const mapType = "mapbox://styles/mapbox/outdoors-v9";
   const [viewport, setViewport] = useState({
     width: myWidth,
     height: window.innerHeight,
     latitude: 19.182755,
     longitude: 72.840157,
-    zoom: 9,
+    zoom: 11,
   });
 
   return (
