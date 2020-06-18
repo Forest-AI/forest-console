@@ -1,22 +1,48 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Settings from "./Pages/Settings";
+import { ProtectedRoute } from "./Components/ProtectedRoute";
+import { auth } from "./firebase";
 
 /*  Main entry point of the app used for routing between pages */
 
 function App() {
+  const [user, setUser] = useState(false);
+
+  auth.onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
+      console.log("user is signed in");
+      console.log(user);
+      setUser(user);
+    } else {
+      // No user is signed in.
+      console.log("no user signed in");
+    }
+  });
+
   return (
     <div className="App">
       <Router>
-        <Route exact path="/">
-          <Redirect to="/login" />
-        </Route>
-        <Route path="/home" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/login"></Redirect>
+          </Route>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <ProtectedRoute exact path="/home" component={Home} />
+          <ProtectedRoute exact path="/settings" component={Settings} />
+          <Route path="*" component={() => "404 not found"} />
+        </Switch>
       </Router>
     </div>
   );

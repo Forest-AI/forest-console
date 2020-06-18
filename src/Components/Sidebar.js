@@ -1,5 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 
 import consoleLogo from "../img/console-logo.svg";
 import homeLogo from "../img/home.svg";
@@ -15,11 +16,14 @@ function Sidebar() {
       <img id="forest-logo" src={consoleLogo} alt="Forest Logo" />
 
       <div className="sidebar-option-container">
+        {/* Todo: Add Link tag to all images */}
         <img className="option-icon" src={homeLogo} alt="Home" />
         <img className="option-icon" src={dataLogo} alt="Data" />
         <img className="option-icon" src={gpsLogo} alt="GPS" />
         <img className="option-icon" src={alertLogo} alt="Alert" />
-        <img className="option-icon" src={settingLogo} alt="setting" />
+        <Link to="/settings">
+          <img className="option-icon" src={settingLogo} alt="setting" />
+        </Link>
       </div>
 
       <img src={userPic} alt="User" />

@@ -16,7 +16,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(30, 30, 30, 0.5);
+  background-color: rgba(244, 244, 244, 0.5);
   border-radius: 20px;
   width: 30em;
   height: 1.9em;
@@ -63,6 +63,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  color: white;
+  color: black;
   margin-right: 10px;
 }

@@ -11,9 +11,8 @@ const Map = () => {
     height: window.innerHeight,
     latitude: 19.182755,
     longitude: 72.840157,
-    zoom: 11,
+    zoom: 10,
   });
-
   return (
     <div className="map-container">
       <ReactMapGL
@@ -23,8 +22,8 @@ const Map = () => {
         onViewportChange={(viewport) => setViewport(viewport)}
       >
         <Marker
-          latitude={19.182755}
-          longitude={72.840157}
+          latitude={19.2283}
+          longitude={72.9139}
           offsetLeft={-20}
           offsetTop={-10}
         >
