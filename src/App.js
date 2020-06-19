@@ -12,6 +12,7 @@ import Signup from "./Pages/Signup";
 import Settings from "./Pages/Settings";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { auth } from "./firebase";
+import Notfound from "./Pages/Notfound";
 
 /*  Main entry point of the app used for routing between pages */
 
@@ -41,7 +42,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <ProtectedRoute exact path="/home" component={Home} />
           <ProtectedRoute exact path="/settings" component={Settings} />
-          <Route path="*" component={() => "404 not found"} />
+          <Route path="*" component={Notfound} />
         </Switch>
       </Router>
     </div>

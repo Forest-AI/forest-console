@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "../firebase";
 import "./Signup.css";
 import SignupPageImage from "../img/forest-team.svg";
@@ -13,17 +13,25 @@ const Signup = () => {
   const onEmailChange = (event) => setEmail(event.target.value);
   const onPasswordChange = (event) => setPassword(event.target.value);
 
-  const onSignUp = () => {
-    console.log("sign up");
-    console.log(email, password);
+  //error messages
+  var [signupErrorMessage, setSignupErrorMessage] = useState("");
 
+  var history = useHistory();
+
+  const onSignUp = () => {
     // firebase authentication
     auth
       .createUserWithEmailAndPassword(email, password)
+      .then(function () {
+        history.push("/login");
+        signupErrorMessage = setSignupErrorMessage("");
+      })
       .catch(function (error) {
         // Handle Errors here.
         console.log("error signing up !");
-        window.alert("error signing up !");
+        signupErrorMessage = setSignupErrorMessage(
+          "Error signing up, Try again!"
+        );
 
         //Note: need to clear field when error in signup
       });
@@ -49,7 +57,10 @@ const Signup = () => {
             onChange={onPasswordChange}
           />
           {/* <input type="password" placeholder="Verify Password" /> */}
-          <button onClick={onSignUp}>SIGN UP</button>
+          <button type="submit" onClick={onSignUp}>
+            SIGN UP
+          </button>
+          <h1 className="error-message">{signupErrorMessage}</h1>
           <Link to="/login">already have an account</Link>
         </div>
       </div>

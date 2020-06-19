@@ -46,6 +46,19 @@ input:focus {
   border: 1px solid #45a323;
 }
 
+.error-message {
+  text-decoration: none;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: 2vh;
+  color: #ed2d2d;
+  margin-left: 2vh;
+}
+
 button {
   width: 340px;
   height: 50px;

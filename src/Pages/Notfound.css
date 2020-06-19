@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.Notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#image_404 {
+  margin: 130px 0px 20px 0px;
+}
+
+.header-1,
+.header-2 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.header-1 {
+  color: #000000;
+}
+
+.header-2 {
+  color: #449624;
+}

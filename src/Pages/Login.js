@@ -9,6 +9,9 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //error messages
+  var [LoginErrorMessage, setLoginErrorMessage] = useState("");
+
   // email & password event
   const onEmailChange = (event) => setEmail(event.target.value);
   const onPasswordChange = (event) => setPassword(event.target.value);
@@ -25,11 +28,14 @@ const Login = () => {
         console.log("user signed in");
         console.log(result);
         history.push("/home");
+        LoginErrorMessage = setLoginErrorMessage("");
       })
       .catch(function (error) {
         console.log("there was an error signing in...");
         console.log(error);
-        window.alert("there was an error signing in...");
+        LoginErrorMessage = setLoginErrorMessage(
+          "Error logging in, Try again !"
+        );
       });
   };
 
@@ -45,12 +51,15 @@ const Login = () => {
           onChange={onPasswordChange}
         />
 
-        <button className="login-button" onClick={onLogin}>
+        <button type="submit" className="login-button" onClick={onLogin}>
           LOG IN
         </button>
 
+        <h1 className="error-message">{LoginErrorMessage}</h1>
+
         <div className="other-links">
           <Link to="/signup">Create Account</Link>
+          <Link to="/">Forget Password</Link>
         </div>
       </div>
     </div>
