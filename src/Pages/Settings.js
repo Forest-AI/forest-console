@@ -37,7 +37,7 @@ const Settings = () => {
       <div className="element-container">
         <h1>Forest Console settings page</h1>
         <p>Press Log Out button below to log out of your account</p>
-        <button type="submit" onClick={Signout}>
+        <button id="logout-button" type="submit" onClick={Signout}>
           LOG OUT
         </button>
       </div>

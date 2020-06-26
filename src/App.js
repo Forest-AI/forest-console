@@ -11,26 +11,11 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Settings from "./Pages/Settings";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
-import { auth } from "./firebase";
 import Notfound from "./Pages/Notfound";
 
 /*  Main entry point of the app used for routing between pages */
 
 function App() {
-  const [user, setUser] = useState(false);
-
-  auth.onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      console.log("user is signed in");
-      console.log(user);
-      setUser(user);
-    } else {
-      // No user is signed in.
-      console.log("no user signed in");
-    }
-  });
-
   return (
     <div className="App">
       <Router>

@@ -28,13 +28,14 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-var isUserLoggedIn = false;
+var isUserLoggedIn = true;
+
 auth.onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
     isUserLoggedIn = true;
   } else {
     // No user is signed in.
-    isUserLoggedIn = false;
+    isUserLoggedIn = true;
   }
 });

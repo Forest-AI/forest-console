@@ -5,15 +5,40 @@
 }
 
 .settings-page {
-  display: block;
-  margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .element-container {
   display: flex;
+  margin-top: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 10vh 1vh 10vh 1vh;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+#logout-button {
+  width: 300px;
+  height: 50px;
+  color: #ffffff;
+  background: #cb2f31;
+  border-radius: 5px;
+  border: solid 1px #cb2f31;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+#logout-button:hover {
+  background: #a52224;
 }

@@ -25,10 +25,12 @@ const Login = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(function (result) {
-        console.log("user signed in");
         console.log(result);
+        console.log("user signed in");
         history.push("/home");
         LoginErrorMessage = setLoginErrorMessage("");
+        localStorage.setItem("userLogginCookie", email);
+        console.log(localStorage.getItem("userLoginCookie"));
       })
       .catch(function (error) {
         console.log("there was an error signing in...");

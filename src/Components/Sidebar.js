@@ -13,20 +13,28 @@ import userPic from "../img/userpic.png";
 function Sidebar() {
   return (
     <div className="sidebar-container">
-      <img id="forest-logo" src={consoleLogo} alt="Forest Logo" />
+      <img id="forest-logo" src={consoleLogo} alt="Forest-Logo" />
 
       <div className="sidebar-option-container">
         {/* Todo: Add Link tag to all images */}
-        <img className="option-icon" src={homeLogo} alt="Home" />
-        <img className="option-icon" src={dataLogo} alt="Data" />
-        <img className="option-icon" src={gpsLogo} alt="GPS" />
-        <img className="option-icon" src={alertLogo} alt="Alert" />
-        <Link to="/settings">
-          <img className="option-icon" src={settingLogo} alt="setting" />
+        <Link className="sidebar-logos" to="">
+          <img src={homeLogo} alt="" />
+        </Link>
+        <Link className="sidebar-logos" to="">
+          <img src={dataLogo} alt="" />
+        </Link>
+        <Link className="sidebar-logos" to="">
+          <img src={gpsLogo} alt="" />
+        </Link>
+        <Link className="sidebar-logos" to="">
+          <img src={alertLogo} alt="" />
+        </Link>
+        <Link className="sidebar-logos" to="/settings">
+          <img src={settingLogo} alt="" />
         </Link>
       </div>
 
-      <img src={userPic} alt="User" />
+      {/* <img src={userPic} alt="User" /> */}
     </div>
   );
 }
