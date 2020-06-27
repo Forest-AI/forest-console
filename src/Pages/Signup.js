@@ -45,8 +45,8 @@ const Signup = () => {
     <div className="signup-page">
       <img id="SignupPageImage" src={SignupPageImage} alt="" />
       <div className="right-elements">
-        <h1 className="header-1">Connect, Collect</h1>
-        <h1 className="header-2">Adapt</h1>
+        <h1 id="signup-header-1">Connect, Collect</h1>
+        <h1 id="signup-header-2">Adapt</h1>
         <p>Create free account, stop climate change </p>
         <div className="signup-form">
           <h3>SignUp Now</h3>
