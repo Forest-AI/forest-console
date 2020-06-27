@@ -29,18 +29,19 @@
   text-align: right;
 }
 
-.right-elements h1 {
+#signup-header-1 {
   font-style: normal;
   font-weight: bold;
   font-size: 55px;
   line-height: 70px;
-}
-
-#signup-header-1 {
   color: #000000;
 }
 
 #signup-header-2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 70px;
   color: #3f9620;
 }
 
