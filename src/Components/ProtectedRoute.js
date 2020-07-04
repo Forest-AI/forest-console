@@ -28,7 +28,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-var isUserLoggedIn = true;
+var isUserLoggedIn = false;
 
 auth.onAuthStateChanged(function (user) {
   if (user) {
@@ -36,6 +36,6 @@ auth.onAuthStateChanged(function (user) {
     isUserLoggedIn = true;
   } else {
     // No user is signed in.
-    isUserLoggedIn = true;
+    isUserLoggedIn = false;
   }
 });

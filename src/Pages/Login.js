@@ -29,8 +29,6 @@ const Login = () => {
         console.log("user signed in");
         history.push("/home");
         LoginErrorMessage = setLoginErrorMessage("");
-        localStorage.setItem("userLogginCookie", email);
-        console.log(localStorage.getItem("userLoginCookie"));
       })
       .catch(function (error) {
         console.log("there was an error signing in...");

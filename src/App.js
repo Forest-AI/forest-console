@@ -5,6 +5,8 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+
+import { auth } from "./firebase";
 import "./App.css";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
@@ -16,6 +18,18 @@ import Notfound from "./Pages/Notfound";
 /*  Main entry point of the app used for routing between pages */
 
 function App() {
+  const [user, setUser] = useState(false);
+
+  auth.onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
+      setUser(user);
+    } else {
+      // No user is signed in.
+      console.log("no user signed in");
+    }
+  });
+
   return (
     <div className="App">
       <Router>
