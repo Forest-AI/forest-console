@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 import "./Map.css";
 
+/**
+ * Main Map instance of Console
+ **/
+
 const Map = () => {
-  const myWidth = window.innerWidth - 50;
+  // Mapbox specific setup here
+  const myWidth = window.innerWidth - 60;
   const mapType = "mapbox://styles/mapbox/outdoors-v9";
+
   const [viewport, setViewport] = useState({
     width: myWidth,
     height: window.innerHeight,
@@ -12,6 +18,11 @@ const Map = () => {
     longitude: 72.840157,
     zoom: 10,
   });
+
+  // local states are here
+  /*
+  const [satelliteMap, setSatelliteMap] = useState["false"];
+*/
   return (
     <div className="map-container">
       <ReactMapGL
@@ -26,7 +37,7 @@ const Map = () => {
           offsetLeft={-20}
           offsetTop={-10}
         >
-          <span role="img"> 🌲</span>
+          <span role="img">🔴</span>
         </Marker>
       </ReactMapGL>
     </div>

@@ -24,8 +24,8 @@
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
-  box-shadow: 5px -5px 10px #c9c9c9;
   z-index: 2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .sidebar-option-container {

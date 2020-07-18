@@ -2,7 +2,9 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { auth } from "../firebase";
 
-// A structure of protected Routes
+/**
+ * A structure of protected Routes
+ **/
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
@@ -28,7 +30,8 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-var isUserLoggedIn = false;
+//set this to true during development to disable authentication
+var isUserLoggedIn = true;
 
 auth.onAuthStateChanged(function (user) {
   if (user) {

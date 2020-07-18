@@ -1,0 +1,32 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.ListItem-container {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  height: 40px;
+  background: rgba(166, 166, 166, 0.4);
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 32px;
+}
+
+.ListItem-container h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.items-row1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1vh;
+}

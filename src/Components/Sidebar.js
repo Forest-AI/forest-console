@@ -10,6 +10,10 @@ import alertLogo from "../img/alert.svg";
 import settingLogo from "../img/setting.svg";
 import userPic from "../img/userpic.png";
 
+/**
+ * Sidebar that provides options to navigate to different pages
+ **/
+
 function Sidebar() {
   return (
     <div className="sidebar-container">
