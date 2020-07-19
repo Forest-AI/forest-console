@@ -8,12 +8,12 @@
 .ListItem-container {
   position: relative;
   z-index: 2;
-  width: 300px;
+  width: 325px;
   height: 40px;
   background: rgba(166, 166, 166, 0.4);
   border-radius: 5px;
   margin-top: 10px;
-  margin-left: 32px;
+  margin-left: 20px;
 }
 
 .ListItem-container h1 {

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Alertbar.css";
 import ListItem from "./Listitem";
+import _ from "lodash";
+import db from "../firebase";
 
 /**
  * It displays alerts fetched from reat-time
@@ -8,6 +10,28 @@ import ListItem from "./Listitem";
  **/
 
 const Alertbar = () => {
+  const [alert, setAlert] = useState([]);
+
+  // this effect fetches alerts from firebase
+  useEffect(() => {
+    let alertsRef = db.collection("alerts");
+    alertsRef.get().then((alerts) => {
+      alerts.forEach((alert) => {
+        let data = alert.data();
+        let id = alert.id;
+
+        // lets make payload with all above data and the id
+        let payload = {
+          id,
+          ...data,
+        };
+
+        // saving the payload in the state alert
+        setAlert((alert) => [...alert, payload]);
+      });
+    });
+  }, []);
+
   return (
     <div className="Alertbar-container">
       <div className="stat-section">
@@ -41,16 +65,20 @@ const Alertbar = () => {
       </div>
 
       <div className="scrollable-section">
-        <ListItem location="Garden" activity="Chainsaw" time="Now" />
-        <ListItem location="Gateway" activity="Chainsaw" time="01:23:45" />
-        <ListItem location="Mid Area" activity="Poaching" time="11:23:45" />
-        <ListItem location="Main Door" activity="Wildfire" time="01:23:45" />
-        <ListItem location="Backyard" activity="Chainsaw" time="11:23:45" />
-        <ListItem location="Main Door" activity="Wildfire" time="01:23:45" />
-        <ListItem location="Garden" activity="Chainsaw" time="11:23:45" />
-        <ListItem location="Main Door" activity="Wildfire" time="01:23:45" />
-        <ListItem location="Backyard" activity="Chainsaw" time="11:23:45" />
-        <ListItem location="Main Door" activity="Wildfire" time="01:23:45" />
+        {/* use lodash map function to map value from fake api
+         which is nothing but an object and maps to props of component
+         Listitem*/}
+        {_.map(alert, (alert, idx) => {
+          return (
+            <ListItem
+              key={idx}
+              id={alert.id}
+              location={alert.location}
+              activity={alert.activity}
+              time={alert.time}
+            />
+          );
+        })}
       </div>
     </div>
   );

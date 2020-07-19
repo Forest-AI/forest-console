@@ -37,7 +37,9 @@ const Map = () => {
           offsetLeft={-20}
           offsetTop={-10}
         >
-          <span role="img">🔴</span>
+          <span role="img" aria-label="">
+            🔴
+          </span>
         </Marker>
       </ReactMapGL>
     </div>
