@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./Alertbar.css";
 import ListItem from "./Listitem";
-import _ from "lodash";
-import db from "../firebase";
-
+import firebase from "../firebase";
 /**
  * It displays alerts fetched from reat-time
  * database uses Listietm component
  **/
 
 const Alertbar = () => {
-  const [alert, setAlert] = useState([]);
+  const [alertList, setAlertList] = useState();
 
-  // this effect fetches alerts from firebase
   useEffect(() => {
-    let alertsRef = db.collection("alerts");
-    alertsRef.get().then((alerts) => {
-      alerts.forEach((alert) => {
-        let data = alert.data();
-        let id = alert.id;
-
-        // lets make payload with all above data and the id
-        let payload = {
-          id,
-          ...data,
-        };
-
-        // saving the payload in the state alert
-        setAlert((alert) => [...alert, payload]);
-      });
+    const alertRef = firebase.database().ref("Alert");
+    alertRef.on("value", (snapshot) => {
+      const alerts = snapshot.val();
+      const alertList = [];
+      for (let id in alerts) {
+        alertList.push(alerts[id]);
+      }
+      setAlertList(alertList);
     });
   }, []);
 
@@ -65,20 +55,12 @@ const Alertbar = () => {
       </div>
 
       <div className="scrollable-section">
-        {/* use lodash map function to map value from fake api
-         which is nothing but an object and maps to props of component
-         Listitem*/}
-        {_.map(alert, (alert, idx) => {
-          return (
-            <ListItem
-              key={idx}
-              id={alert.id}
-              location={alert.location}
-              activity={alert.activity}
-              time={alert.time}
-            />
-          );
-        })}
+        {/* Alerts goes here*/}
+        {alertList
+          ? alertList.map((alert, index) => (
+              <ListItem alert={alert} key={index} />
+            ))
+          : ""}
       </div>
     </div>
   );
