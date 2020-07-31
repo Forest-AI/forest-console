@@ -9,6 +9,7 @@ import firebase from "../firebase";
 
 const Alertbar = () => {
   const [alertList, setAlertList] = useState();
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const alertRef = firebase.database().ref("Alert");
@@ -19,6 +20,7 @@ const Alertbar = () => {
         alertList.push(alerts[id]);
       }
       setAlertList(alertList);
+      setCount(alertList.length);
     });
   }, []);
 
@@ -27,13 +29,13 @@ const Alertbar = () => {
       <div className="stat-section">
         <input type="search" placeholder="Search" />
         <div className="stat-row1">
-          <h1 id="online-count">2361</h1>
+          <h1 id="online-count">22</h1>
           <h1 id="online-label">Online</h1>
         </div>
 
         <div className="stat-row2">
           <div className="stat-row2-element">
-            <h1 id="chainsaw-count">10</h1>
+            <h1 id="chainsaw-count">{count}</h1>
             <h1 id="chainsaw-label">Chainsaw</h1>
           </div>
 
@@ -43,7 +45,7 @@ const Alertbar = () => {
           </div>
 
           <div className="stat-row2-element">
-            <h1 id="poaching-count">5</h1>
+            <h1 id="poaching-count">0</h1>
             <h1 id="poaching-label">Poaching</h1>
           </div>
 
@@ -65,5 +67,4 @@ const Alertbar = () => {
     </div>
   );
 };
-
 export default Alertbar;

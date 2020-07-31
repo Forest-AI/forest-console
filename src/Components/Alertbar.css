@@ -93,9 +93,9 @@ input[type="search"] {
 
 #chainsaw-count {
   font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
   color: #ff2e00;
   margin: 0px 3px 0px 0px;
 }
@@ -103,17 +103,17 @@ input[type="search"] {
 #chainsaw-label {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 15px;
+  line-height: 15px;
   color: #454545;
   margin: 0px 8px 0px 0px;
 }
 
 #wildfire-count {
   font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
   color: #ffb800;
   margin: 0px 3px 0px 0px;
 }
@@ -121,17 +121,17 @@ input[type="search"] {
 #wildfire-label {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 15px;
+  line-height: 15px;
   color: #454545;
   margin: 0px 8px 0px 0px;
 }
 
 #poaching-count {
   font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
   color: #ad00ff;
   margin: 0px 3px 0px 0px;
 }
@@ -147,9 +147,9 @@ input[type="search"] {
 
 #offline-count {
   font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
   color: #1cadce;
   margin: 0px 3px 0px 0px;
 }

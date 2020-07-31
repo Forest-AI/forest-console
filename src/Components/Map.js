@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 import "./Map.css";
+import firebase from "../firebase";
 
 /**
  * Main Map instance of Console
  **/
 
-const Map = () => {
+function Map() {
   // Mapbox specific setup here
   const myWidth = window.innerWidth - 60;
   const mapType = "mapbox://styles/mapbox/outdoors-v9";
@@ -19,10 +20,21 @@ const Map = () => {
     zoom: 10,
   });
 
-  // local states are here
-  /*
-  const [satelliteMap, setSatelliteMap] = useState["false"];
-*/
+  const [markerList, setMarkerList] = useState();
+
+  useEffect(() => {
+    const markerRef = firebase.database().ref("Alert");
+    markerRef.on("value", (snapshot) => {
+      const markers = snapshot.val();
+      const markerKey = snapshot.key;
+      const markerList = [];
+      for (let id in markers) {
+        markerList.push(markers[id]);
+      }
+      setMarkerList(markerList);
+    });
+  }, []);
+
   return (
     <div className="map-container">
       <ReactMapGL
@@ -31,19 +43,24 @@ const Map = () => {
         {...viewport}
         onViewportChange={(viewport) => setViewport(viewport)}
       >
-        <Marker
-          latitude={19.2283}
-          longitude={72.9139}
-          offsetLeft={-20}
-          offsetTop={-10}
-        >
-          <span role="img" aria-label="">
-            🔴
-          </span>
-        </Marker>
+        {/* Alerts goes here*/}
+        {markerList
+          ? markerList.map((marker) => (
+              <Marker
+                latitude={marker.lat}
+                longitude={marker.long}
+                offsetLeft={-20}
+                offsetTop={-10}
+              >
+                <span role="img" aria-label="">
+                  🔴
+                </span>
+              </Marker>
+            ))
+          : ""}
       </ReactMapGL>
     </div>
   );
-};
+}
 
 export default Map;

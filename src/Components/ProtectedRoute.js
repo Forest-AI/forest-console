@@ -31,7 +31,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
 };
 
 //set this to true during development to disable authentication
-var isUserLoggedIn = false;
+var isUserLoggedIn = true;
 
 auth.onAuthStateChanged(function (user) {
   if (user) {
