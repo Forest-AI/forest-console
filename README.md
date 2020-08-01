@@ -1,6 +1,6 @@
 # Forest AI Website
 
-###### A ReactJS based web console to oversee the Forest Ai network & data
+###### A ReactJS based web console to oversee the Forest AI network & data
 
 ## Live demo
 
@@ -8,7 +8,7 @@ You can find a live running system to test at
 
 - [Forest Console](http://console.forestai.tech/home) - The admin webapp
 
-![Console](doc/asset/console-screenshot.png)
+![Console](doc/asset/console-screenshot.png?raw=true)
 
 ## How to Run !
 
