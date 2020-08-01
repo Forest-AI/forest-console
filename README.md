@@ -19,4 +19,4 @@ You can find a live running system to test at
 5. Open the in the editor and add your required api keys as enironment variables, Use env sample for reference.
 6. Type `npm start` to start the app, go to http://localhost:3000 in your browser to see it live.
 
-##### If you see login page just go on /home route as authentication is already disabled in source code
+Note : If you see login page just go on `http://localhost:3000/home` or `http://console.forestai.tech/home` route as authentication is already disabled in source code
